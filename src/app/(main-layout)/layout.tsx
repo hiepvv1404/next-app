@@ -1,3 +1,5 @@
+import Menu from "./_components/Menu";
+
 export default function MainLayout({
   children,
 }: Readonly<{
@@ -7,7 +9,7 @@ export default function MainLayout({
     <div className="container main-layout py-3">
       <div className="row">
         <div className="col-3">
-          <h3>Menu</h3>
+          <Menu />
         </div>
         <div className="col-9">{children}</div>
       </div>
