@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const FilterForm = () => {
   const path = usePathname();
@@ -20,8 +21,24 @@ const FilterForm = () => {
     }
 
     const queryString = params.toString();
+    //call api cookies
+    fetch("/api/cookies", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: "token_x", value: "set token okila" }),
+    });
     router.push(`${path}?${queryString}`);
   };
+  useEffect(() => {
+    const getCookies = async () => {
+      const response = await fetch("/api/cookies?name=token");
+      const data = await response.json();
+      console.log("Cookie Value:", data.cookies);
+    };
+    getCookies();
+  }, []);
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="status">Status:</label>
