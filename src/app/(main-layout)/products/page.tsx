@@ -1,7 +1,17 @@
 import Button from "./_components/Button";
+import FilterForm from "./_components/FilterForm";
 import ProductsListPage from "./_components/ProductList";
 
-const ProductPage = () => {
+type searchParams = {
+  status: string;
+  keyword: string;
+};
+const ProductPage = async ({
+  searchParams,
+}: {
+  searchParams: searchParams;
+}) => {
+  const search = await searchParams;
   return (
     <div>
       <h3>Product Page</h3>
@@ -12,7 +22,13 @@ const ProductPage = () => {
         repudiandae dignissimos.
       </p>
       <ProductsListPage />
+      <hr />
+      <FilterForm />
+      <hr />
       <Button />
+
+      <p>Status: {search.status}</p>
+      <p>Keyword: {search.keyword}</p>
     </div>
   );
 };
