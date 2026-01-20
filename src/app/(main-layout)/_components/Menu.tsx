@@ -42,6 +42,14 @@ const Menu = () => {
             About
           </Link>
         </li>
+        <li className="nav-item">
+          <Link
+            href="/todos"
+            className={clsx("nav-link", { active: pathName === "/todos" })}
+          >
+            Todo
+          </Link>
+        </li>
       </ul>
     </>
   );

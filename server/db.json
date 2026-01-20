@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Buy groceries",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "Walk the dog",
+      "completed": true
+    },
+    {
+      "id": "3",
+      "title": "Read a book",
+      "completed": false
+    },
+    {
+      "id": "e8ad",
+      "title": "aseqw",
+      "completed": false
+    },
+    {
+      "id": "ffcc",
+      "title": "asdsad",
+      "completed": false
+    },
+    {
+      "id": "0920",
+      "title": "erw23412",
+      "completed": false
+    }
+  ]
+}
